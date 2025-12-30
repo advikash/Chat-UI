@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Card Style Chat App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+
+    <!-- CONTACTS -->
+    <div class="contacts">
+        <h2>Contacts</h2>
+
+        <div class="contact active" onclick="openChat('Alex', this)">
+            <span class="dot blue"></span> Alex
+        </div>
+        <div class="contact" onclick="openChat('Maria', this)">
+            <span class="dot pink"></span> Maria
+        </div>
+        <div class="contact" onclick="openChat('John', this)">
+            <span class="dot green"></span> John
+        </div>
+        <div class="contact" onclick="openChat('Sophia', this)">
+            <span class="dot orange"></span> Sophia
+        </div>
+        <div class="contact" onclick="openChat('Daniel', this)">
+            <span class="dot purple"></span> Daniel
+        </div>
+    </div>
+
+    <!-- CHAT -->
+    <div class="chat">
+        <div class="chat-header">
+            <h3 id="chatName">Alex</h3>
+        </div>
+
+        <div class="chat-box" id="chatBox">
+            <div class="msg received">Hello 👋</div>
+        </div>
+
+        <div class="chat-input">
+            <input type="text" id="messageInput" placeholder="Write message...">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+</div>
+
+<script>
+let chats = {
+    Alex: ["Hello 👋"],
+    Maria: ["Hi "],
+    John: ["who are you"],
+    Sophia: ["good morning"],
+    Daniel: ["All the best!"]
+};
+
+let currentUser = "Alex";
+
+function openChat(name, el) {
+    currentUser = name;
+    document.getElementById("chatName").innerText = name;
+
+    document.querySelectorAll(".contact")
+        .forEach(c => c.classList.remove("active"));
+    el.classList.add("active");
+
+    let box = document.getElementById("chatBox");
+    box.innerHTML = "";
+
+    chats[name].forEach(msg => {
+        let d = document.createElement("div");
+        d.className = "msg received";
+        d.innerText = msg;
+        box.appendChild(d);
+    });
+}
+
+function sendMessage() {
+    let input = document.getElementById("messageInput");
+    if (input.value.trim() === "") return;
+
+    let d = document.createElement("div");
+    d.className = "msg sent";
+    d.innerText = input.value;
+
+    document.getElementById("chatBox").appendChild(d);
+    input.value = "";
+}
+</script>
+
+</body>
+</html>

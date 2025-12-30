@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+    height: 100vh;
+    background: #f4f6f8;
+}
+
+/* APP */
+.app {
+    display: flex;
+    height: 100vh;
+}
+
+/* CONTACTS */
+.contacts {
+    width: 28%;
+    background: white;
+    padding: 20px;
+    border-right: 2px solid #e5e7eb;
+}
+
+.contacts h2 {
+    margin-bottom: 20px;
+    color: #111827;
+}
+
+.contact {
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    background: #f9fafb;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.contact:hover {
+    background: #e5e7eb;
+}
+
+.contact.active {
+    background: #111827;
+    color: white;
+}
+
+/* COLOR DOTS */
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+.blue { background: #3b82f6; }
+.pink { background: #ec4899; }
+.green { background: #22c55e; }
+.orange { background: #f97316; }
+.purple { background: #8b5cf6; }
+
+/* CHAT */
+.chat {
+    width: 72%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+/* HEADER */
+.chat-header {
+    background: rgb(248, 243, 243);
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    border-left: 6px solid #3b82f6;
+}
+
+/* CHAT BOX */
+.chat-box {
+    flex: 1;
+    background: rgb(239, 234, 234);
+    border-radius: 12px;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+/* MESSAGES */
+.msg {
+    max-width: 60%;
+    padding: 10px 14px;
+    margin: 10px 0;
+    border-radius: 12px;
+    font-size: 14px;
+}
+
+.received {
+    border: 2px solid #3b82f6;
+    color: #1f2937;
+}
+
+.sent {
+    margin-left: auto;
+    background: #3b82f6;
+    color: white;
+}
+
+/* INPUT */
+.chat-input {
+    display: flex;
+    margin-top: 10px;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 12px;
+    border-radius: 10px;
+    border: 2px solid #d1d5db;
+    outline: none;
+}
+
+.chat-input button {
+    margin-left: 10px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    background: #3b82f6;
+    color: white;
+    cursor: pointer;
+}
